@@ -1,3 +1,0 @@
-2024-03-31 17:58:15,808 [1] INFO UserDbRepository - Creating UserDbRepository...
-2024-03-31 17:58:15,820 [1] INFO UserDbRepository - Entering findAll() with from Users
-2024-03-31 17:58:15,896 [1] INFO UserDbRepository - Exiting findAll() from Users
