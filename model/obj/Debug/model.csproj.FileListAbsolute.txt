@@ -1,6 +1,0 @@
-C:\MPP Lab\Agentie_turism-.NET\model\bin\Debug\model.dll
-C:\MPP Lab\Agentie_turism-.NET\model\bin\Debug\model.pdb
-C:\MPP Lab\Agentie_turism-.NET\model\obj\Debug\model.csproj.AssemblyReference.cache
-C:\MPP Lab\Agentie_turism-.NET\model\obj\Debug\model.csproj.CoreCompileInputs.cache
-C:\MPP Lab\Agentie_turism-.NET\model\obj\Debug\model.dll
-C:\MPP Lab\Agentie_turism-.NET\model\obj\Debug\model.pdb
