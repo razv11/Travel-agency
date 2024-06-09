@@ -1,0 +1,53 @@
+syntax="proto3";
+
+option java_package = "travelAgency.network.protobuffprotocol";
+option java_outer_classname = "TravelAgencyProtobufs";
+
+message User {
+  int64 id = 1;
+  string username = 2;
+  string password = 3;
+}
+
+message Trip {
+  int64 id = 1;
+  string landmark = 2;
+  string transportCompanyName = 3;
+  string departureTime = 4;
+  float price = 5;
+  int32 availableSeats = 6;
+}
+
+message Reservation {
+  int64 id = 1;
+  string clientName = 2;
+  string phoneNumber = 3;
+  int32 numberOfTickets = 4;
+  User user = 5;
+  Trip trip = 6;
+}
+
+message Request {
+  enum RequestType {Unknown=0; Login=1; Logout=2; GetAllTrips=3; GetSearchedTrips=4; ReserveTrip=5;}
+
+  RequestType type = 1;
+
+  oneof payload {
+    User user = 2;
+    Trip trip = 3;
+    Reservation reservation = 4;
+  }
+
+  string landmark = 5;
+  int32 startHour = 6;
+  int32 endHour = 7;
+}
+
+message Response {
+  enum ResponseType {Unknown=0; Ok=1; Error=2; TripReserved=3; GetAllTrips=4; GetSearchedTrips=5;}
+
+  ResponseType type = 1;
+  optional string errorMessage = 2;
+  repeated Trip trips = 3;
+  Reservation reservation = 4;
+}
