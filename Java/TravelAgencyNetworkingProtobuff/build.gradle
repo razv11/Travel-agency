@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+
+group = 'travelAgency.network'
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    implementation project(':TravelAgencyModel')
+    implementation project(':TravelAgencyServices')
+
+    implementation 'com.google.protobuf:protobuf-java:3.21.9'
+}
+
+test {
+    useJUnitPlatform()
+}
