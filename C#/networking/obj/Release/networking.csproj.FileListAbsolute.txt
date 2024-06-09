@@ -1,0 +1,13 @@
+C:\MPP Lab\Agentie_turism-.NET\networking\bin\Release\networking.dll
+C:\MPP Lab\Agentie_turism-.NET\networking\bin\Release\networking.pdb
+C:\MPP Lab\Agentie_turism-.NET\networking\bin\Release\model.dll
+C:\MPP Lab\Agentie_turism-.NET\networking\bin\Release\services.dll
+C:\MPP Lab\Agentie_turism-.NET\networking\bin\Release\model.pdb
+C:\MPP Lab\Agentie_turism-.NET\networking\bin\Release\services.pdb
+C:\MPP Lab\Agentie_turism-.NET\networking\obj\Release\networking.csproj.AssemblyReference.cache
+C:\MPP Lab\Agentie_turism-.NET\networking\obj\Release\networking.csproj.CoreCompileInputs.cache
+C:\MPP Lab\Agentie_turism-.NET\networking\obj\Release\networking.csproj.Up2Date
+C:\MPP Lab\Agentie_turism-.NET\networking\obj\Release\networking.dll
+C:\MPP Lab\Agentie_turism-.NET\networking\obj\Release\networking.pdb
+C:\MPP Lab\Agentie_turism-.NET\networking\bin\Release\Newtonsoft.Json.dll
+C:\MPP Lab\Agentie_turism-.NET\networking\bin\Release\Newtonsoft.Json.xml
