@@ -1,9 +1,0 @@
-C:\MPP Lab\Agentie_turism-.NET\services\bin\Release\services.dll
-C:\MPP Lab\Agentie_turism-.NET\services\bin\Release\services.pdb
-C:\MPP Lab\Agentie_turism-.NET\services\bin\Release\model.dll
-C:\MPP Lab\Agentie_turism-.NET\services\bin\Release\model.pdb
-C:\MPP Lab\Agentie_turism-.NET\services\obj\Release\services.csproj.AssemblyReference.cache
-C:\MPP Lab\Agentie_turism-.NET\services\obj\Release\services.csproj.CoreCompileInputs.cache
-C:\MPP Lab\Agentie_turism-.NET\services\obj\Release\services.csproj.Up2Date
-C:\MPP Lab\Agentie_turism-.NET\services\obj\Release\services.dll
-C:\MPP Lab\Agentie_turism-.NET\services\obj\Release\services.pdb
