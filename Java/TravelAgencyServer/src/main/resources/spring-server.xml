@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <context:annotation-config/>
+    <context:component-scan base-package="travelAgency.serverAMS"/>
+
+    <util:properties id="jdbcProps" location="classpath:travelAgencyServer.properties"/>
+
+    <bean id="userRepo" class="travelAgency.persistence.repository.jdbc.UsersDBRepository">
+        <constructor-arg ref="jdbcProps"/>
+    </bean>
+
+    <bean id="tripRepo" class="travelAgency.persistence.repository.jdbc.TripsDBRepository">
+        <constructor-arg ref="jdbcProps"/>
+    </bean>
+
+    <bean id="reservationRepo" class="travelAgency.persistence.repository.jdbc.ReservationsDBRepository">
+        <constructor-arg ref="jdbcProps"/>
+    </bean>
+
+    <bean id="connectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory"/>
+
+    <bean id="topic" class="org.apache.activemq.command.ActiveMQTopic">
+        <constructor-arg value="TravelAgencyTopic"/>
+    </bean>
+
+    <bean id="javaTimeModule" class="com.fasterxml.jackson.datatype.jsr310.JavaTimeModule"/>
+
+    <bean class="travelAgency.serverAMS.ObjectMapperFactory"/>
+
+    <bean id="objectMapper" factory-bean="objectMapperFactory" factory-method="objectMapper"/>
+
+    <bean id="converter" class="org.springframework.jms.support.converter.MappingJackson2MessageConverter">
+        <property name="objectMapper" ref="objectMapper"/>
+        <property name="targetType" value="TEXT"/>
+        <property name="typeIdPropertyName" value="_notification"/>
+    </bean>
+
+    <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <constructor-arg ref="connectionFactory"/>
+        <property name="defaultDestination" ref="topic"/>
+        <property name="messageConverter" ref="converter"/>
+    </bean>
+
+    <bean id="notificationService" class="travelAgency.serverAMS.NotificationServiceImpl">
+        <constructor-arg ref="jmsTemplate"/>
+    </bean>
+
+    <bean id="travelAgencyServer" class="travelAgency.serverAMS.TravelAgencyServerAMSImpl">
+        <constructor-arg ref="userRepo"/>
+        <constructor-arg ref="tripRepo"/>
+        <constructor-arg ref="reservationRepo"/>
+        <constructor-arg ref="notificationService"/>
+    </bean>
+
+    <bean id="travelAgencyTCPServer" class="travelAgency.network.utils.ams.TravelAgencyRpcAMSConcurrentServer">
+        <constructor-arg value="#{jdbcProps.getProperty('travelagency.server.port')}"/>
+        <constructor-arg ref="travelAgencyServer"/>
+    </bean>
+
+</beans>
