@@ -1,0 +1,32 @@
+.tripTableContainer {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.tripTable {
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    align-self: center;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.actionRowButton {
+    background-color: silver;
+    font-size: 12px;
+    border: none;
+}
+
+.actionRowButton:hover {
+    background-color: darkgray;
+}
+
+.buttonsCell {
+    display: flex;
+    justify-content: space-between;
+    width: 140px;
+}

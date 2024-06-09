@@ -1,0 +1,1 @@
+export const TRAVEL_AGENCY_BASE_URL = 'http://localhost:8080/travelagency/trips'

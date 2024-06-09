@@ -1,0 +1,36 @@
+.tripForm {
+    margin: auto;
+    width: calc(30%);
+    font-size: 15px;
+    padding: 2%;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: antiquewhite;
+}
+
+.form-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-item input {
+    padding: 5px 8px;
+    border-radius: 20px;
+    border: 1px solid green;
+    font-size: 10px;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.add-trip-button {
+    width: 100%;
+    height: 30px;
+    background-color: silver;
+    border: none;
+    border-radius: 20px;
+}
+
+.add-trip-button:hover {
+    border: 1px solid black;
+    background-color: darkgray;
+}
